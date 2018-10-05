@@ -7,7 +7,7 @@ function add(a, b) {
     }      
     //同位數相加
     var ans=[]
-    for(i=a.length-1; i>=0; i--){
+    for(var i=a.length-1; i>=0; i--){
             ans[i]=Number(a[i])+Number(b[i])
         }
         //處理進位

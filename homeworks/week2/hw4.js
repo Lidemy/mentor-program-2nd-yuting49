@@ -1,6 +1,6 @@
 function isPalindromes(str) {
     var reverseStr = reverse(str)
-    for (i=0; i<str.length; i++){
+    for (var i=0; i<str.length; i++){
         if(str[i]!=reverseStr[i]){
             return false
         }
@@ -9,7 +9,7 @@ function isPalindromes(str) {
 
 function reverse(str) {
     var result = "" 
-    for(i=str.length-1; i>=0; i--){
+    for(var i=str.length-1; i>=0; i--){
         result = result+str[i]
     }return result
 }
