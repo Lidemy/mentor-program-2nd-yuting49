@@ -9,40 +9,21 @@
                 padding: 10px 50px;
                 display: block;
             }
-            .btn{
-                margin-top: 30px;
-                margin-left: 50px;
-                padding: 20px 30px;
-                border-radius: 15px;
-                border-width: 1px;
-                cursor: pointer;
-                background: rgb(156, 166, 242);
-                font-size: 20px
-            }
         </style>  
     </head>
     <body>
-        <button class="btn hide">Hide</button>
-        <button class="btn show">Show</button>
-        <h1 class="title">萌萌快消失</h1>
+        <h1 class="title">原來題目意思完全理解錯</h1>
     </body>
     <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
-            //實作出一個簡單的 function 叫做q，= document.querySelector()
-            function q(attribute){
-                return document.querySelector(attribute)    
-            }
-            
-            function hide(){
-                q(".title").style.display = "none";
-            }
-            
-            function show(){
-                q(".title").style.display = "block";
-            }    
-            
-            q(".hide").addEventListener("click",hide);
-            q(".show").addEventListener("click",show);
-        }) 
+			function q (selector){ 
+				const target = document.querySelector(selector)
+				return {
+					hide : function(){target.style.display = "none"},
+					show : function(){target.style.display ="block"},
+				}
+			}
+            let element = q(".title")
+                element.hide()
+                element.show()
     </script>
 </html>
