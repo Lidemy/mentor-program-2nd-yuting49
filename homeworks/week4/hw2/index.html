@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>week4：仿 google 表單</title>
+        <link rel="stylesheet" href="./form.CSS" />
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="intro">
+                <h1>從零到一：程式導師實驗計畫報名表單</h1>
+                <p>詳情請參考：<a href='https://medium.com/@hulitw/mentor-program-b5f96ae1eed1',targrt=_blank>https://medium.com/@hulitw/mentor-program-b5f96ae1eed1</a></p>
+                <p>記得填完表單之後還要寫信報名才算成功，兩者缺一不可！</p>
+                <p class="red">*必填</p>
+            </div>
+            
+            <form>
+                <div class="mustAns question">
+                    <div class="subject">電子郵件地址 <span class="star">*</span></div>
+                    <input class="answer" id="a1" type="email" placeholder="請輸入你的電子郵件">
+                    <div class="remind">這是必填問題</div>
+                </div>
+
+                <div class="mustAns question">
+                    <div class="subject">暱稱 <span class="star">*</span></div>
+                    <div class="note">該怎麼稱呼你</div>
+                    <input class="answer" type="text" placeholder="您的回答">
+                    <div class="remind">這是必填問題</div>
+                </div>
+
+                <div  class="mustAns question">
+                    <div class="subject">報名類型 <span class="star">*</span></div>
+                    <div>
+                        <input id="pro" class="answer radio" type="radio" name="learn" >
+                        <label for="pro">工程師培養班（每週付出四十小時，從零培養到工程師，學費是一個月薪水）</label>
+                    </div>
+                    <div>
+                        <input id="fun" class="radio"  type="radio" name="learn" >
+                        <label for="fun">業餘班（依照個人目標訂立學習計畫，學費一萬五千元）</label>
+                    </div>
+                    <div class="remind">這是必填問題</div>
+                </div>
+
+                <div  class="mustAns question">
+                    <div class="subject">是否有程式相關背景？ <span class="star">*</span></div>
+                    <div class="note">範例：無、高中時候學過C++、學過一點網頁前端、目前在資策會上課...</div>
+                    <input class="answer"  type="text" placeholder="您的回答">
+                    <div class="remind">這是必填問題</div>
+                </div>
+
+                <div class="question">
+                    <div class="subject">其他</div>
+                    <div class="note">其他任何你想講的</div>
+                    <input class="answer"  type="text" placeholder="您的回答">
+                </div>
+            </form>
+            
+            <button onclick="submit()">提交</button>
+        </div>
+    </body>
+    <script type="text/javascript" src="./form.js">
+    </script>
+</html>

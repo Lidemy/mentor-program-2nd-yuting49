@@ -1,0 +1,46 @@
+body{
+    background: url(https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container{
+    display: flex;
+	margin: 0 auto;
+	width: 80%;
+	flex-wrap: wrap;
+}
+
+.eachStream{
+    margin: 10px;
+    background: rgba(45, 45, 43, 0.741)
+}
+
+.preview {
+	height: 180px;
+}
+.intro {
+	width: 320px;
+	display: flex;
+	background: #000000cc;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.logo img {
+	width: 55px;
+	border: none;
+    border-radius: 50%;
+    margin: 2px
+}
+.title{
+    padding: 5px 15px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.channelname{
+    margin-bottom: 10px;
+    text-decoration: none;
+}
