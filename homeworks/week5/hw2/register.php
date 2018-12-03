@@ -7,17 +7,12 @@
     </head>
     
     <body>
-        <nav>
-            <div class='nav'>
-                <div>
-                    <a href="./index.html">首頁</a>
-                </div>
-                <div>
-                    <a href="./register.php">註冊</a>
-                    <a href="./login.php">登入</a>
-                </div>    
-            </div>
-        </nav>
+        <?php include_once('./navbar.php')?>
+        <form class='users' action="./handle_register.php" method="POST" >
+                <div class='account'> 帳號： <input name='username' type='text'> </div>
+                <div class='account'> 密碼： <input name='password' type='password'> </div>
+                <div class='account'> 暱稱： <input name='nickname' type='text'></div>
+                <input  class='btn' type='submit' value="註冊">
+        </form>
     </body>
-
 </html>
