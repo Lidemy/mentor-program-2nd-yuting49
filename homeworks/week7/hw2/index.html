@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>TODO</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        .container{
+            margin-top:30px;
+            width: 60%;
+            font-size: 20px;
+        }
+       .btn{
+           margin-left: 10px;
+       }
+    </style>
+    
+    <script>
+        $(document).ready(function() {
+            //addtodo
+            $('.addtodo').keydown(function(e){
+                if(e.key === 'Enter'){
+                    addTodo(e.target.value) 
+                    //$('.addtodo').empty()
+                }
+            function addTodo(value){
+                const todoitem = getTodoHTML(value)
+                $('.addtodo').val('')
+                //$('.addtodo').empty() 比較兩者差異
+                $('.todolist').append(todoitem)
+            }
+            function getTodoHTML(value){
+                return `
+                <li class="list-group-item d-flex justify-content-between">${value}
+                    <div>
+                        <button type="button" class="btn btn-success done">完成</button>
+                        <button type="button" class="btn btn-danger delete">刪除</button>
+                    </div>
+                </li> `
+            }
+            })
+            //delete
+            $('.todolist').click(function(e){
+                const element =$(e.target)
+                if(element.hasClass("delete")){
+                    element.parent().parent().remove()
+                }
+            })
+            //done 
+            $('.todolist').click(function(e){
+                const element =$(e.target)
+                if(element.hasClass("done")){
+                    element.parent().parent().css('background','#99FF99')
+                }
+            })   
+        });
+
+    </script>
+    <body>
+        <div class="container">
+        <h1>To do list </h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control addtodo" placeholder="Things To Do" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">Add Todo</span>
+            </div>
+        </div>
+        <br>
+        <ul class="list-group todolist">
+            <li class="list-group-item todoitem d-flex justify-content-between">寫作業
+                <div>
+                    <button type="button" class="btn btn-success done">完成</button>
+                    <button type="button" class="btn btn-danger delete">刪除</button>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">看影片
+                    <div>
+                        <button type="button" class="btn btn-success done">完成</button>
+                        <button type="button" class="btn btn-danger delete">刪除</button>
+                    </div>
+                </li>  
+        </ul>
+    </body>
+</html>

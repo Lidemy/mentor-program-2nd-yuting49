@@ -1,0 +1,65 @@
+
+.intro{
+    background: rgb(285,220,180);
+    padding:25px;
+    margin-top:20px;
+    text-align:center;
+}
+.add{
+    background: rgb(225,230,250);
+    padding: 2%;
+    margin:20px;
+    text-align:right;
+}
+body > div > form > div:nth-child(1) > h3{
+    text-align:center;
+}
+.add_input{
+    width:100%;
+    padding:2%;
+    margin: 10px 0px 15px 0px
+}
+.eachcomment{
+    background: rgb(225,230,250);
+    border:1px solid;
+    padding: 2%;
+    margin: 20px
+}
+.comment{
+    background: rgb(210,215,250);
+    border:0.6px solid;
+    padding:2%
+}
+.sub_comment{
+    background: rgb(222,200,250);
+    border:0.6px solid;
+    padding:2%;
+    margin-top: 10px
+}
+.personal{
+    background: rgb(225,240,250);
+    border:0.6px solid;
+    padding:2%;
+    margin-top: 10px
+}
+.reply{
+    background: rgb(225,230,250);
+    
+    padding:2%
+}
+.add_reply{
+    width:100%;
+    padding:2%;
+    text-align:right;
+    margin: 5px 0px -12px 0px
+}
+.btn-sm{
+    margin-left:5px;
+    z-index: 2; 
+}
+.page{
+    width:960px;
+    padding:5px;
+    margin:0 auto;
+
+}
