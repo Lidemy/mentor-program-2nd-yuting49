@@ -1,0 +1,37 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.container {
+    position: relative;
+    top: 35px;
+    max-width: 960px;
+    margin: 70px auto;
+    display: flex; 
+    justify-content: center;
+    box-sizing: border-box; 
+}
+.row{
+    max-width: 1300px;
+    box-sizing: border-box;
+    display: flex; 
+    justify-content: center;
+    margin: 20px auto;
+}
+.product{
+    text-align: center;
+    box-sizing: border-box;
+    margin: 10px 8px;
+    border: 2px solid;
+    padding: 15px
+}
+.cover{
+    height: 230px;
+    width: 165px;
+}
+.description{
+    margin: 10px
+}
+
