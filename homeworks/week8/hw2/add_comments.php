@@ -1,42 +1,40 @@
 <?php
     session_start();
-    //資料庫連線
     require_once('./conn.php');
-    //確認值不為空
-    if (
-        isset($_POST["comment"]) && !empty($_POST["comment"]) 
-    ){
+    function escape($str){
+        return htmlspecialchars($str, ENT_QUOTES, 'utf-8');
+    }
+    if (isset($_POST["comment"]) && !empty($_POST["comment"])) {
     //從前端取得欲寫入資料庫的資訊
-        $comment = $_POST["comment"];
-        $username = $_SESSION["username"];
-        $parent_id = $_POST["parent_id"];
-    //prepare
+        $comment = escape($_POST["comment"]);
+        $username = escape($_SESSION["username"]);
+        $parent_id = escape($_POST["parent_id"]);
+        $postname = escape($_POST["postname"]);
+
+    //確認登入狀態，身份於前端確認
+        if ($_SESSION['username']) {
         $stmt = $conn->prepare("INSERT INTO yuting_comments (username, comment, parent_id) 
         VALUES(?,?,?)");
         $stmt->bind_param("ssi", $username, $comment, $parent_id);
         $result = $stmt->execute();
         $stmt->close();
-
-    //如果連線成功、資料寫入，取得剛寫入的該筆資料id
-        if($result){
-                $last_id = $conn->insert_id;
-                $arr = array("result" => "success","id" => $last_id);
-                echo json_encode($arr);
-        }else{
-?>
-            <script>
-                alert("Error:" . $conn->error);
-                window.location = './index.php'
-            </script>
-<?php
         }
-    //若值為空，請其輸入內容後再提交
-    }else{
-?>
-        <script>
-            alert("請輸入內容再提交！");
-            window.location = './index.php'
-        </script>
-<?php
+
+    //判斷使用者與主留言是否相符，以決定回覆外觀
+    if ($_SESSION["username"] == $postname) {
+        $if_same_author = true;
+    } else {
+        $if_same_author = false;
+    } 
+              
+    //如果連線成功、資料寫入，取得剛寫入的該筆資料id
+        if ($result) {
+                $last_id = $conn->insert_id;
+                $arr = array("result" => "success", "id" => $last_id, "if_same_author" => $if_same_author);
+                echo json_encode($arr);
+        } else {
+                $arr = array("result" => "fail");
+                echo json_encode($arr);
+        }
     }
 ?>

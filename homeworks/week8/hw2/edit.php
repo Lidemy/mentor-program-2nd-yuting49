@@ -15,26 +15,27 @@
     <body>
         <h2 class='intro'>編輯留言</h2>
     <?php    
-        $id=$_POST['id'];
+        $id = escape($_POST['id']);
         $stmt = $conn->prepare("SELECT * FROM yuting_comments WHERE id = ? ");
         $stmt->bind_param("i", $id );
         $stmt->execute();
         $result = $stmt->get_result();
 
-        if($result){
-            while($row = $result->fetch_assoc()){
-?>
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                ?>
                 <div class='container'>
                     <form class='newcomments add comment' action='edit_comments.php' method='POST'>
+                        <input type='hidden'  name='username' value=<?= escape($row['username'])?> >
                         <input type='hidden' value=<?= escape($row['id']) ?> name='id' />
                         <textarea name='comment' class='comments_size add_input'><?= escape($row['comment'])?></textarea>
                         <br>
                         <input type='submit' name='submit' value='送出' class='btn btn-warning'>
                     </form>  
                 </div>     
-<?php
+                <?php
+            }
         }
-    }
-?>
+    ?>
     </body>
 </html>
