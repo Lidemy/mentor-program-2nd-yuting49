@@ -1,0 +1,18 @@
+{
+  "name": "gulptest",
+  "version": "1.0.0",
+  "description": "add autoprefixer",
+  "main": "form.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-postcss": "^8.0.0",
+    "run-sequence": "^2.2.1"
+  }
+}
