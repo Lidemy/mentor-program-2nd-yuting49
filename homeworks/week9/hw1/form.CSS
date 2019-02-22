@@ -9,6 +9,9 @@ body{
     padding: 30px 20px 50px 20px;
     margin: 5px auto;
 }
+.red{
+    color: red;
+}
 .intro{
     margin: 20px auto;
     width: 630px;
