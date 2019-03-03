@@ -1,0 +1,68 @@
+$allbgcolor:rgb(240, 230, 200);
+$containerbg:rgb(255, 255, 240);
+$remind:red;
+$buttoncolor:rgba(56, 105, 226, 0.926);
+$buttonhover:rgb(33, 79, 216);
+
+body{
+    margin: 30px auto;
+    width: 700px;
+    background: $allbgcolor;
+}
+.container{
+    width: 650px;
+    background: $containerbg;
+    padding: 30px 20px 50px 20px;
+    margin: 5px auto;
+    .intro{
+        margin: 20px auto;
+        width: 630px;
+    }
+    .form{
+        margin: 30px 0;
+        .question{
+            margin: 10px 0; 
+            padding: 10px 15px;
+            .subject{
+                margin: 10px 0;
+                font-size: 20px;
+            }
+            .note{
+                margin: 10px 0;
+                font-size: 14px;
+            }
+            input{
+                border: none;
+                border-bottom: 1px solid ;
+                width: 200px;
+                height: 25px;
+                background: none
+            }
+            .remind{
+                padding: 10px 0;
+                color: $remind;
+                display: none;
+            }
+        }
+    }
+    .button{
+        margin-left: 10px ;
+        font-size: 16px;
+        padding: 10px 30px; 
+        background: $buttoncolor;
+        color: white;
+        border-radius: 10px;
+        border: 0px;
+        cursor: pointer;
+        box-sizing: border-box
+    }
+}
+button:hover {
+    background: $buttonhover
+}
+.radio{
+    width: 16px;
+}
+.star{
+    color: $remind;
+}
