@@ -18,9 +18,6 @@
 
 API 的話可以用這個：https://jsonplaceholder.typicode.com/posts
 
-圖片可參考：
-
-![](blog.png)
 
 ## hw4：簡答題
 
