@@ -1,61 +1,75 @@
 .game {
-  width: 54%;
+  width: 627px;
   margin: 0px auto;
   text-align: center;
 }
-h1{
-  margin: 2px 35px 3px 0px;
-}
-header{
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0px 0px 10px 20px;
-}
-.status{
-  font-size: 20px;
-  margin: 5px
-}
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-weight: bold;
-  line-height: 34px;
-  height: 40px;
-  margin-right: -1px;
-  margin-top: -1px;
-  text-align: center;
-  width: 40px;
-}
-.black{
-  border-radius: 50%; 
-  background: black;
-  border: 1px solid;
-  color:black;
-}
-.white{
-  border-radius: 50%; 
-  background: white;
-  color: white;
-  border: 1px solid;
-  border-color: black
-}
+  h1{
+    margin: 10px 0px 3px 0px;
+  }
+  header{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px -6px 31px;
+    align-items: center
+  }
+    .status{
+      font-size: 20px;
+      margin: 5px 0px 5px 2px;
+    }
+    .btn{
+      height: 40px
+    }
 
-ol, ul {
-  padding-left: 30px;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
+  .container{
+    width: 627px;
+    height: 627px;
+    margin: 0px 0px 0px -25px;
+  }
+  .square_bg{
+    width: 646px;
+  }
+    .block{
+      height: 34px;
+      width: 34px;
+      float: left;
+      box-sizing: border-box;
+    }
+    .square {
+      background: rgba(243, 193, 75, 0);
+      border: 1px solid rgba(0, 0, 0, 0);
+      position: relative;
+      z-index: 30;
+    }
+  .board_bg{
+    width: 612px;
+  }
+    .board{
+      background: rgba(243, 193, 75);
+      border: 1px solid rgba(6, 6, 6, 0.614);
+      position: relative;
+      top: -626px;
+      right: -17px;
+    }
+  
+    .chess{
+      border-radius: 50%;
+      padding: 11px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      z-index: 50;
+      border: 1px solid #999999df
+    }
+    .black{
+      background: black;
+      color: black;
+    }
+    .white{
+    background: white;
+    color: white;
+    }
 
 .square:focus {
   outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
 }

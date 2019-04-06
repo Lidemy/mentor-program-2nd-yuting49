@@ -30,7 +30,7 @@ class Articles extends Component {
     return(
       <div className="main">
         <h2>Articles</h2>
-        { this.state.pick && <EachArticle id={this.state.pick} onClick={() => this.handleBack()}/> }
+        { this.state.pick && <EachArticle id={this.state.pick} onClick={this.handleBack}/> }
         {
           !this.state.pick &&
           <ul className="list-group">
